@@ -56,32 +56,113 @@ export default function App() {
         {ganador ? ganador === 'Empate' ? 'Empate' : `Ganó ${ganador}` : `Turno de ${turnoActual}`}
       </Text>
       <View style={styles.tablero}>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(0)}>
-            <Text style={styles.textoBotoncito}>{tablero[0]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[0] ? tablero[0] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(0)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[0] ? tablero[0] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[0]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(3)}>
-            <Text style={styles.textoBotoncito}>{tablero[3]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[3] ? tablero[3] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(3)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[3] ? tablero[3] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[3]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(6)}>
-            <Text style={styles.textoBotoncito}>{tablero[6]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[6] ? tablero[6] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(6)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[6] ? tablero[6] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[6]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(1)}>
-            <Text style={styles.textoBotoncito}>{tablero[1]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[1] ? tablero[1] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(1)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[1] ? tablero[1] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[1]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(4)}>
-            <Text style={styles.textoBotoncito}>{tablero[4]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[4] ? tablero[4] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(4)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[4] ? tablero[4] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[4]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(7)}>
-            <Text style={styles.textoBotoncito}>{tablero[7]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[7] ? tablero[7] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(7)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[7] ? tablero[7] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[7]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(2)}>
-            <Text style={styles.textoBotoncito}>{tablero[2]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[2] ? tablero[2] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(2)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[2] ? tablero[2] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[2]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(5)}>
-            <Text style={styles.textoBotoncito}>{tablero[5]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[5] ? tablero[5] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(5)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[5] ? tablero[5] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[5]}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botoncito} onPress={() => eventoPresionar(8)}>
-            <Text style={styles.textoBotoncito}>{tablero[8]}</Text>
+          <TouchableOpacity 
+            style={
+              [styles.botoncito, tablero[8] ? tablero[8] === 'X' ? styles.botonX : styles.botonO : null]
+            } 
+            onPress={() => eventoPresionar(8)}
+          >
+            <Text 
+              style={
+                [styles.textoBotoncito, tablero[8] ? tablero[8] === 'X' ? styles.textoX : styles.textoO : null]
+              }
+            >{tablero[8]}</Text>
           </TouchableOpacity>
       </View>
     </View>
@@ -114,8 +195,20 @@ const styles = StyleSheet.create({
   },
   textoBotoncito: {
     fontSize: 64,
-    color: '#313a55',
+    color: '#849cec',
     fontWeight: 800,
     textShadow: '0px 1px 6px rgba(0,0,0,0.6)'
-  },  
+  },
+  botonX: {
+    backgroundColor: '#313a55',
+  },
+  botonO: {
+    backgroundColor: '#554c31',
+  },
+  textoX: {
+    color: '#849cec',
+  },
+  textoO: {
+    color: '#d6bf78',
+  }
 });
