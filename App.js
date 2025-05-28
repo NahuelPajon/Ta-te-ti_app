@@ -203,12 +203,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#313a55',
   },
   botonO: {
-    backgroundColor: '#554c31',
+    backgroundColor: '#6d322e',
   },
   textoX: {
     color: '#849cec',
   },
   textoO: {
-    color: '#d6bf78',
+    color: '#f37068',
   }
 });
