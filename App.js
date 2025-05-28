@@ -49,6 +49,12 @@ export default function App() {
     }
   };
 
+  const reiniciar = () => {
+    setTablero(Array(9).fill(null));
+    setTurnoActual('X');
+    setGanador(null);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>ta te ti</Text>
@@ -134,6 +140,9 @@ export default function App() {
               style={tablero[8] === 'X' ? styles.textoX : styles.textoO}>{tablero[8]}</Text>
           </TouchableOpacity>
       </View>
+      <TouchableOpacity style={styles.botonReiniciar} onPress={reiniciar}>
+          <Text style={styles.textoReiniciar}>REINICIAR</Text>
+      </TouchableOpacity>
     </View>
     
   );
@@ -148,8 +157,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   tablero: {
-    width: 500,
-    height: 500,
+    width: 300,
+    height: 300,
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
@@ -162,11 +171,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  textoBotoncito: {
-    fontSize: 64,
-    fontWeight: 800,
-    textShadow: '0px 1px 6px rgba(0,0,0,0.6)'
-  },
   botonX: {
     backgroundColor: '#313a55',
   },
@@ -174,13 +178,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#6d322e',
   },
   textoX: {
-    fontSize: 64,
+    fontSize: 55,
     fontWeight: 800,
     textShadow: '0px 1px 6px rgba(0,0,0,0.6)',
     color: '#849cec',
   },
   textoO: {
-    fontSize: 64,
+    fontSize: 55,
     fontWeight: 800,
     textShadow: '0px 1px 6px rgba(0,0,0,0.6)',
     color: '#f37068',
@@ -194,5 +198,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 32,
     fontWeight: 500,
+  },
+  botonReiniciar: {
+    margin: 1,
+    padding: 5,
+    borderRadius: 6,
+    backgroundColor: 'rgb(31, 31, 31)',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textoReiniciar: {
+    fontSize: 18,
+    fontWeight: 500,
+    color: 'rgb(214, 214, 214)',
   }
 });
