@@ -28,6 +28,27 @@ export default function App() {
     return tablero.every(celda => celda) ? 'Empate' : null;
   };
 
+  /*
+    Trato de explicar. Básicamente te hacés una copia del tablero y le ponés la nueva jugada, X ó O.
+    Luego, te fijás si ese tablero actualizado configura una de las combinaciones para ganar.
+    Si lo es, seteás el ganador y a otra cosa mariposa.
+    Sino,  seteás el próximo turno para el otro jugador.
+  */
+  const eventoPresionar = indice => {
+    if (tablero[indice] || ganador) // Si ya hay un cosito en la celda o hay ganador, no se hace nada
+      return;
+    const nuevoTablero = [...tablero];
+    nuevoTablero[indice] = turnoActual;
+    const resultado = verificarSiGano(nuevoTablero);
+    setTablero(nuevoTablero);
+    if (resultado) {
+      setGanador(resultado);
+    }
+    else {
+      setTurnoActual(turnoActual === 'X' ? 'O' : 'X');
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View>
