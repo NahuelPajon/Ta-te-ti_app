@@ -51,8 +51,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Ta te ti</Text>
-      <Text>
+      <Text style={styles.header}>ta te ti</Text>
+      <Text style={styles.marcador}>
         {ganador ? ganador === 'Empate' ? 'Empate' : `Ganó ${ganador}` : `Turno de ${turnoActual}`}
       </Text>
       <View style={styles.tablero}>
@@ -62,11 +62,7 @@ export default function App() {
             } 
             onPress={() => eventoPresionar(0)}
           >
-            <Text 
-              style={
-                [styles.textoBotoncito, tablero[0] ? tablero[0] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[0]}</Text>
+            <Text style={tablero[0] === 'X' ? styles.textoX : styles.textoO}>{tablero[0]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -74,11 +70,7 @@ export default function App() {
             } 
             onPress={() => eventoPresionar(3)}
           >
-            <Text 
-              style={
-                [styles.textoBotoncito, tablero[3] ? tablero[3] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[3]}</Text>
+            <Text style={tablero[3] === 'X' ? styles.textoX : styles.textoO}>{tablero[3]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -86,11 +78,7 @@ export default function App() {
             } 
             onPress={() => eventoPresionar(6)}
           >
-            <Text 
-              style={
-                [styles.textoBotoncito, tablero[6] ? tablero[6] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[6]}</Text>
+            <Text style={tablero[6] === 'X' ? styles.textoX : styles.textoO}>{tablero[6]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -98,11 +86,7 @@ export default function App() {
             } 
             onPress={() => eventoPresionar(1)}
           >
-            <Text 
-              style={
-                [styles.textoBotoncito, tablero[1] ? tablero[1] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[1]}</Text>
+            <Text style={tablero[1] === 'X' ? styles.textoX : styles.textoO}>{tablero[1]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -111,10 +95,7 @@ export default function App() {
             onPress={() => eventoPresionar(4)}
           >
             <Text 
-              style={
-                [styles.textoBotoncito, tablero[4] ? tablero[4] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[4]}</Text>
+              style={tablero[4] === 'X' ? styles.textoX : styles.textoO}>{tablero[4]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -123,10 +104,7 @@ export default function App() {
             onPress={() => eventoPresionar(7)}
           >
             <Text 
-              style={
-                [styles.textoBotoncito, tablero[7] ? tablero[7] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[7]}</Text>
+              style={tablero[7] === 'X' ? styles.textoX : styles.textoO}>{tablero[7]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -135,10 +113,7 @@ export default function App() {
             onPress={() => eventoPresionar(2)}
           >
             <Text 
-              style={
-                [styles.textoBotoncito, tablero[2] ? tablero[2] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[2]}</Text>
+              style={tablero[2] === 'X' ? styles.textoX : styles.textoO}>{tablero[2]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -147,10 +122,7 @@ export default function App() {
             onPress={() => eventoPresionar(5)}
           >
             <Text 
-              style={
-                [styles.textoBotoncito, tablero[5] ? tablero[5] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[5]}</Text>
+              style={tablero[5] === 'X' ? styles.textoX : styles.textoO}>{tablero[5]}</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={
@@ -159,10 +131,7 @@ export default function App() {
             onPress={() => eventoPresionar(8)}
           >
             <Text 
-              style={
-                [styles.textoBotoncito, tablero[8] ? tablero[8] === 'X' ? styles.textoX : styles.textoO : null]
-              }
-            >{tablero[8]}</Text>
+              style={tablero[8] === 'X' ? styles.textoX : styles.textoO}>{tablero[8]}</Text>
           </TouchableOpacity>
       </View>
     </View>
@@ -173,7 +142,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f4f4f4",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
@@ -195,7 +164,6 @@ const styles = StyleSheet.create({
   },
   textoBotoncito: {
     fontSize: 64,
-    color: '#849cec',
     fontWeight: 800,
     textShadow: '0px 1px 6px rgba(0,0,0,0.6)'
   },
@@ -206,9 +174,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#6d322e',
   },
   textoX: {
+    fontSize: 64,
+    fontWeight: 800,
+    textShadow: '0px 1px 6px rgba(0,0,0,0.6)',
     color: '#849cec',
   },
   textoO: {
+    fontSize: 64,
+    fontWeight: 800,
+    textShadow: '0px 1px 6px rgba(0,0,0,0.6)',
     color: '#f37068',
+  },
+  header: {
+    marginBottom: 20,
+    fontSize: 100,
+    fontWeight: 600,
+  },
+  marcador: {
+    marginBottom: 20,
+    fontSize: 32,
+    fontWeight: 500,
   }
 });
