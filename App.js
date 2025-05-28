@@ -98,26 +98,24 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   tablero: {
-    width: 300,
-    height: 300,
+    width: 500,
+    height: 500,
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   botoncito: {
-    width: '33.33%',
-    height: '33.33%',
-    borderWidth: 1,
-    borderColor: '#000',
-    backgroundColor: '#2196F3',
+    width: '32%',
+    height: '32%',
+    margin: 1,
+    borderRadius: 18,
+    backgroundColor: '#908f8f',
     justifyContent: 'center',
     alignItems: 'center'
   },
   textoBotoncito: {
-    fontSize: 48,
-    color: 'black'
-  },
-  filas: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },    
+    fontSize: 64,
+    color: '#313a55',
+    fontWeight: 800,
+    textShadow: '0px 1px 6px rgba(0,0,0,0.6)'
+  },  
 });
