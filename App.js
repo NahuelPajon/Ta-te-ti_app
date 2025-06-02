@@ -3,7 +3,14 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import useTicTacToe from "./useTictactoe"; // importamos el hook personalizado
 
 export default function App() {
-  const { turno, casillas, manejarPresion, reiniciarJuego, contadorO, contadorX } = useTicTacToe();
+  const {
+    turno,
+    casillas,
+    manejarPresion,
+    reiniciarJuego,
+    contadorO,
+    contadorX,
+  } = useTicTacToe();
 
   return (
     <View style={styles.container}>
@@ -29,9 +36,9 @@ export default function App() {
       >
         <Text style={styles.texto}>Reiniciar</Text>
       </TouchableOpacity>
-      <View>
-        <Text style={styles.texto}>X: {contadorX}</Text>
-        <Text style={styles.texto}>O: {contadorO}</Text>
+      <View style={styles.containerContador}>
+        <Text style={styles.texto}>❌: {contadorX} ganadas</Text>
+        <Text style={styles.texto}>⭕: {contadorO} ganadas</Text>
       </View>
     </View>
   );
@@ -77,5 +84,16 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 30,
     marginBottom: 20,
+  },
+  containerContador: {
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    paddingHorizontal: 20,
+    bottom: 0,
+    backgroundColor: "#3b3f50",
+    paddingVertical: 20,
+    alignContent: "center",
   },
 });
