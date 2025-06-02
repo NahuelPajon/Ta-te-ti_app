@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 export default function useTicTacToe() {
-  const [turno, setTurno] = useState("⭕"); // estado para el turno actual, el otro jugador es jugadorX
+  const [turno, setTurno] = useState("O"); // estado para el turno actual, el otro jugador es jugadorX
   const [casillas, setCasillas] = useState(Array(9).fill("")); // X y O en las casillas
   const [contadorX, setContadorX] = useState(0); // contador para wins de jugador X
   const [contadorO, setContadorO] = useState(0); // contador para wins de jugador O
 
   useEffect(() => {
-    setTurno(turno === "⭕" ? "❌" : "⭕"); // alternar turno
+    setTurno(turno === "O" ? "X" : "O"); // alternar turno
 
     const ganador = checkGanador();
     // si hay un ganador, mostrar alerta y reiniciar el juego
     if (ganador) {
-      alert(`¡El ganador es ${ganador}!`);
+      alert(`¡El ganador es ${ganador === "O" ? "⭕" : "❌" }!`);
       reiniciarJuego();
-      if (ganador === "⭕") {
+      if (ganador === "O") {
         setContadorO(contadorO + 1); // incrementar contador de O
       } else {
         setContadorX(contadorX + 1); // incrementar contador de X
@@ -60,7 +60,7 @@ export default function useTicTacToe() {
 
   const reiniciarJuego = () => {
     setCasillas(Array(9).fill("")); // reiniciar las casillas
-    setTurno("O"); // reiniciar turno a O
+    setTurno("X"); // reiniciar turno a O
   };
 
   return { turno, casillas, manejarPresion, reiniciarJuego, contadorO, contadorX};

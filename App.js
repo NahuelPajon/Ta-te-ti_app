@@ -15,18 +15,36 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.textoTurno}>Turno: {turno}</Text>
+      <Text style={styles.textoTurno}>Turno: {turno === "O" ? "⭕" : "❌"}</Text>
       <View style={styles.grid}>
         {casillas.map((value, index) => (
           <TouchableOpacity // usamos TouchableOpacity para que el botón sea personalizable
             key={index}
-            style={styles.botonTaTeTi}
+            style={[
+              styles.botonTaTeTi,
+              value === "O"
+                ? styles.botonO
+                : value === "X"
+                ? styles.botonX
+                : null,
+            ]}
             disabled={value !== ""} // deshabilitamos el botón si ya hay algo en la casilla
             onPress={() => {
               manejarPresion(index);
             }}
           >
-            <Text style={styles.texto}>{casillas[index]}</Text>
+            <Text
+              style={[
+                styles.textoBotoncito,
+                value === "O"
+                  ? styles.textoO
+                  : value === "X"
+                  ? styles.textoX
+                  : null,
+              ]}
+            >
+              {casillas[index]}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -95,5 +113,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#3b3f50",
     paddingVertical: 20,
     alignContent: "center",
+  },
+  textoBotoncito: {
+    fontSize: 64,
+    color: "#313a55",
+    color: "#849cec",
+    fontWeight: 800,
+    textShadow: "0px 1px 6px rgba(0,0,0,0.6)",
+  },
+  botonX: {
+    backgroundColor: "#313a55",
+  },
+  botonO: {
+    backgroundColor: "#6d322e",
+  },
+  textoX: {
+    color: "#849cec",
+  },
+  textoO: {
+    color: "#f37068",
   },
 });
